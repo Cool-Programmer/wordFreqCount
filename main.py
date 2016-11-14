@@ -29,5 +29,18 @@ def clean_up_list(word_list):
             word = word.replace(symbols[i], '')
             if str(len(word)) > 3:
                 clean_word_list.append(word)
+    create_dictionary(clean_word_list)
+
+def create_dictionary(clean_word_list):
+    print("Creating dictionary...")
+    word_count = {}
+    for word in clean_word_list:
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+    for key, value in sorted(word_count.items(), key=operator.itemgetter(1)):
+        print(key, value)
+print ("Completed.")
 
 start("http://spaces.ru/forums/?f=1307&link_id=838708")
