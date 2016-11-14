@@ -10,10 +10,3 @@ def clean_up_list(word_list):
         if len(word) > 0:
             print(word)
             clean_word_list.append(word)
-
-
-
-            words = content.lower().split()
-        for each_word in words:
-            print(each_word)
-            #word_list.append(each_word)

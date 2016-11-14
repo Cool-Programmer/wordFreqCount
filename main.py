@@ -18,6 +18,16 @@ def start(url):
         words = content.lower().split()
         for each_word in words:
             word_list.append(each_word)
+    clean_up_list(word_list)
 
+def clean_up_list(word_list):
+    clean_word_list = []
+    print("Cleaning up unnecissary characters...")
+    for word in word_list:
+        symbols ="1234567890`~!@#$%^&*()-_+={}[];\"':<>,"
+        for i in range (0, len(symbols)):
+            word = word.replace(symbols[i], '')
+            if str(len(word)) > 3:
+                clean_word_list.append(word)
 
 start("http://spaces.ru/forums/?f=1307&link_id=838708")
